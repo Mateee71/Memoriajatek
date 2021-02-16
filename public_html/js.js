@@ -14,10 +14,10 @@ function init() {
     }
     $("#jatekter div").click(lapcsere);
     $("#jatekter div").hover(function () {
-        $(this).addClass("kartya");
+        $(this).fadeTo("slow", 0.15); $(this).addClass("kartya");
     },
     function () {
-        $(this).removeClass("kartya");
+         $(this).fadeTo("slow", 0.15); $(this).removeClass("kartya");
     });
 }
 function lapcsere() {
@@ -25,5 +25,6 @@ function lapcsere() {
     var i = $(this).attr("id");
     console.log(i);
     $("#jatekter img").eq(i - 1).attr({"src": "kartya/" + i + ".png", "alt": "kep"});
-
+    $("#jatekter img").eq(i - 1).fadeTo("slow", 0.1);
+    
 }
